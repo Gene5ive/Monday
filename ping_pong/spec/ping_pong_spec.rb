@@ -6,16 +6,15 @@ describe('Fixnum#ping_pong') do
     expect((2).ping_pong()).to(eq([1,2]))
   end
 
+  it("tests if number divisible by only 3") do
+    expect((3).ping_pong()).to(eq([1,2,"Ping"]))
+  end
 
-  # it("for each i in range return True if i % 3 == 0") do
-  #   expect((i).%3).to(eq(0))
-  # end
-  #
-  # it("for each i in range return True if i % 5 == 0") do
-  #   expect((i).%5).to(eq(0))
-  # end
-  #
-  # it("for each i in range return True if i % 3 == 0 and if i % 5 == 0") do
-  #   expect((i).%3).to(eq(0)) && expect((i).%5).to(eq(0))
-  # end
+  it("tests if number divisible by only 5") do
+    expect((5).ping_pong()).to(eq([1,2,"Ping",4,"Pong"]))
+  end
+
+  it("tests if number divisible by 3 and 5") do
+    expect((15).ping_pong()).to(eq([1,2,"Ping",4,"Pong","Ping",7,8,"Ping","Pong",11,"Ping",13,14,"Ping-Pong"]))
+  end
 end
